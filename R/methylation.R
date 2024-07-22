@@ -1229,7 +1229,7 @@ TCGAvisualize_starburst <- function(
     idx[is.na(idx)] <- FALSE # handling NAs
     volcano[idx, "meFDR2"] <- -1 * volcano[idx, "meFDR"]
 
-    label[2:9] <-  paste(label[2:9], "in", group2)
+    # label[2:9] <-  paste(label[2:9], "in", group2)
 
     # subseting by regulation (geFDR) and methylation level
     # (meFDR) down regulated up regulated lowerthr
