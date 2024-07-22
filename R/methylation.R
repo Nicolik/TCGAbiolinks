@@ -1244,17 +1244,13 @@ TCGAvisualize_starburst <- function(
     # Group 2:up regulated and hypomethylated
     a <- volcano %>% dplyr::filter(
         geFDR2 > exp.upperthr &
-            logFC > logFC.cut &
-            meFDR2 < met.lowerthr &
-            abs(!!as.name(diffcol)) > diffmean.cut
+            meFDR2 < met.lowerthr
     )
 
     # Group 3: down regulated and hypomethylated
     b <- volcano %>% dplyr::filter(
         geFDR2 < exp.lowerthr &
-            logFC > logFC.cut &
-            meFDR2 < met.lowerthr &
-            abs(!!as.name(diffcol)) > diffmean.cut
+            meFDR2 < met.lowerthr
     )
 
 
@@ -1262,30 +1258,26 @@ TCGAvisualize_starburst <- function(
     c <- volcano %>% dplyr::filter(
         geFDR2 > exp.lowerthr &
             geFDR2 < exp.upperthr &
-            meFDR2 < met.lowerthr &
-            abs(!!as.name(diffcol)) > diffmean.cut
+            meFDR2 < met.lowerthr
     )
 
     # Group 5: hypermethylated
     d <- volcano %>% dplyr::filter(
         geFDR2 > exp.lowerthr &
             geFDR2 < exp.upperthr &
-            meFDR2 > met.upperthr &
-            abs(!!as.name(diffcol)) > diffmean.cut
+            meFDR2 > met.upperthr
     )
 
     # Group 6: upregulated
     e <- volcano %>% dplyr::filter(
         geFDR2 > exp.upperthr &
             meFDR2 < met.upperthr &
-            meFDR2 > met.lowerthr &
-            logFC > logFC.cut
+            meFDR2 > met.lowerthr
     )
 
     # Group 7: downregulated
     f <- volcano %>% dplyr::filter(
         geFDR2 < exp.lowerthr &
-            abs(logFC) > logFC.cut &
             meFDR2 < met.upperthr &
             meFDR2 > met.lowerthr
     )
@@ -1293,17 +1285,13 @@ TCGAvisualize_starburst <- function(
     # Group 8: upregulated and hypermethylated
     g <- volcano %>% dplyr::filter(
         geFDR2 > exp.upperthr &
-            logFC > logFC.cut &
-            meFDR2 > met.upperthr &
-            abs(!!as.name(diffcol)) > diffmean.cut
+            meFDR2 > met.upperthr 
     )
 
     # Group 9: downregulated and hypermethylated in group 2
     h <-  volcano %>% dplyr::filter(
         geFDR2 < exp.lowerthr &
-            logFC > logFC.cut &
-            meFDR2 > met.upperthr &
-            abs(!!as.name(diffcol)) > diffmean.cut
+            meFDR2 > met.upperthr 
     )
 
 
