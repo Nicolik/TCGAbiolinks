@@ -1450,6 +1450,9 @@ TCGAvisualize_starburst <- function(
             dpi = dpi
         )
     }
+
+    readr::write_csv(x = volcano, file = "starburst_results_raw.csv")        
+        
     volcano$shape <- NULL
     volcano$threshold.starburst <- NULL
     volcano$threshold.size <- NULL
