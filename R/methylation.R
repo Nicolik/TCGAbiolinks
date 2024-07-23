@@ -1076,15 +1076,15 @@ TCGAvisualize_starburst <- function(
         legend = "DNA Methylation/Expression Relation",
         color = NULL,
         label = c(
-            "Not Significant",
-            "Up regulated & Hypo methylated",
-            "Down regulated & Hypo methylated",
-            "hypo methylated",
-            "hyper methylated",
-            "Up regulated",
-            "Down regulated",
-            "Up regulated & Hyper methylated",
-            "Down regulated & Hyper methylated"
+            "NS",
+            "Up & Hypo",
+            "Down & Hypo",
+            "Hypo",
+            "Hyper",
+            "Up",
+            "Down",
+            "Up & Hyper",
+            "Down & Hyper"
         ),
         xlim = NULL,
         ylim = NULL,
@@ -1304,21 +1304,21 @@ TCGAvisualize_starburst <- function(
     volcano$threshold.size <- "1"
 
     state <- c(
-        "Up regulated & Hypo methylated",
+        "Up & Hypo",
         # a
-        "Down regulated & Hypo methylated",
+        "Down & Hypo",
         # b
-        "hypo methylated",
+        "Hypo",
         # c
-        "hyper methylated",
+        "Hyper",
         # d
-        "Up regulated",
+        "Up",
         # e
-        "Down regulated",
+        "Down",
         # f
-        "Up regulated & Hyper methylated",
+        "Up & Hyper",
         # g
-        "Down regulated & Hyper methylated"
+        "Down & Hyper"
     ) # h
 
     s <- list(a, b, c, d, e, f, g, h)
